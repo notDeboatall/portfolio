@@ -1,0 +1,4 @@
+# Git LFS - Track large frame assets
+assets/frames/*.jpg filter=lfs diff=lfs merge=lfs -text
+assets/frames/*.jpeg filter=lfs diff=lfs merge=lfs -text
+assets/frames/*.png filter=lfs diff=lfs merge=lfs -text

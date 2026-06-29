@@ -1,0 +1,145 @@
+        body {
+            background-color: #212529;
+            color: #ffffff;
+            margin: 0;
+            overflow-x: hidden;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Hide scrollbars during preload */
+        body.loading {
+            overflow: hidden;
+        }
+
+        /* Glassmorphism Classes */
+        .glass-header {
+            background: rgba(33, 37, 41, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-btn {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .glass-btn:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 239, 0, 0.6);
+            box-shadow: 0 0 20px rgba(255, 239, 0, 0.2);
+            transform: translateY(-2px);
+            color: #FFEF00 !important;
+        }
+
+        .glass-card {
+            background-color: #343a40;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(255, 255, 255, 0.4);
+            box-shadow: 0 10px 40px -15px rgba(255, 255, 255, 0.08);
+        }
+
+        /* Scroll Animation Transitions */
+        .reveal-element {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal-element.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Custom Input */
+        .input-luxury {
+            background-color: #212529;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            transition: all 0.3s ease;
+        }
+        .input-luxury:focus {
+            outline: none;
+            border-color: rgba(255, 255, 255, 0.6);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+        }
+
+        /* Loader pulse */
+        @keyframes pulse-yellow {
+            0%, 100% { transform: scale(1); opacity: 1; box-shadow: 0 0 12px rgba(255, 239, 0, 0.4); }
+            50% { transform: scale(1.15); opacity: 0.6; box-shadow: 0 0 4px rgba(255, 239, 0, 0.1); }
+        }
+        
+        .ai-dot-loading {
+            width: 12px;
+            height: 12px;
+            background-color: #FFEF00;
+            border-radius: 50%;
+            animation: pulse-yellow 2s infinite ease-in-out;
+        }
+
+        /* Hero Text Opacity Animation helpers */
+        .hero-text-block {
+            transform: translateY(20px);
+            opacity: 0;
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .hero-text-block.visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Timeline Trail */
+        .timeline-line {
+            background: linear-gradient(180deg, #FFEF00 0%, rgba(255, 239, 0, 0.05) 100%);
+        }
+
+        /* Infinite Marquee */
+        @keyframes slide-infinite {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .marquee-container {
+            display: flex;
+            width: max-content;
+            animation: slide-infinite 30s linear infinite;
+        }
+        .marquee-container:hover {
+            animation-play-state: paused;
+        }
+        .tech-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 24px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 9999px;
+            font-family: 'Inter', sans-serif;
+                    font-size: 14px;
+            color: #a1a1aa;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+        .tech-pill:hover {
+            color: #FFEF00;
+            border-color: rgba(255, 239, 0, 0.35);
+            background: rgba(255, 239, 0, 0.04);
+            transform: translateY(-2px);
+        }
+
+        /* Keep tech icons colorful */
+        .tech-pill img {
+            transition: filter 0.3s ease;
+            flex-shrink: 0;
+        }
