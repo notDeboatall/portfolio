@@ -35,7 +35,7 @@
             // Start Loading Image Sequence
             for (let i = 1; i <= frameCount; i++) {
                 const img = new Image();
-                img.src = `assets/frames/ezgif-frame-${pad(i)}.jpg`;
+                img.src = `./assets/frames/ezgif-frame-${pad(i)}.jpg`;
                 img.onload = () => {
                     loadedCount++;
                     const progressVal = Math.round((loadedCount / frameCount) * 100);
@@ -88,7 +88,7 @@
             // Draw a specific frame using responsive cover logic
             function drawFrameToCanvas(index) {
                 const img = images[index - 1];
-                if (!img || !img.complete) return;
+                if (!img || !img.complete || img.naturalWidth === 0) return;
                 
                 const canvasAspect = canvas.width / canvas.height;
                 const imgAspect = img.width / img.height;
